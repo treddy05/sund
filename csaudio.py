@@ -35,6 +35,7 @@ def printParams(params):
 def tr(params, rf):
     """tr transforms raw frames to floating-point samples"""
     samps = [x for x in rf]    # convert to numeric bytes
+    print(type(samps))
     # give parameters nicer names
     nchannels = params[0]
     sampwidth = params[1]
@@ -56,7 +57,9 @@ def tr(params, rf):
             # "endian-ness".  The clever indexing with wave.big_endian
             # makes sure we unpack in the proper byte order.
             print("got this far")
+            print(type(samps))
             sampval = samps[2*i + 1 - wave.big_endian] * 256 + samps[2*i + wave.big_endian]
+            print(type(sampval))
             print("got this far")
             if sampval >= 32768:
                 print("prob")
