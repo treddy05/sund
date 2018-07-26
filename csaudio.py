@@ -35,7 +35,7 @@ def printParams(params):
 def tr(params, rf):
     """tr transforms raw frames to floating-point samples"""
     samps = [x for x in rf]    # convert to numeric bytes
-    print(type(samps))
+#     print(type(samps))
     # give parameters nicer names
     nchannels = params[0]
     sampwidth = params[1]
@@ -66,13 +66,13 @@ def tr(params, rf):
                 sampval -= 65536
 #                 print("very prob")
             newsamps[i] = float(sampval)
-        print("got this far")
+#         print("got this far")
         samps = newsamps
     else:
         print('A sample width of', params[1], 'is not supported.')
         print('Returning silence.')
         samps = nsamples * [0.0]
-        print("poo")
+#         print("poo")
 
     if nchannels == 2:
         # Mix to mono
@@ -179,18 +179,18 @@ def read_wav(filename, sound_data):
     # now it has at least two elements, and we reset them
     sound_data[0] = 42
     sound_data[1] = 42
-    print("chod")
+#     print("chod")
     try:
         params, rf = get_data(filename)
-        print("worked")
+#         print("worked")
         samps = tr(params, rf)
-        print("workedmore")
+#         print("workedmore")
               
     except:
         print("There was a problem with the file", filename)
         print("You might check if it's here and of")
         print("the correct format (.wav) ... ")
-        print("dinuhewfvyuewfguyowef")
+#         print("dinuhewfvyuewfguyowef")
         return # nothing
 
     numchannels = params[0]
@@ -202,8 +202,8 @@ def read_wav(filename, sound_data):
     print('   ', numsamples, 'audio samples, taken at')
     print('   ', framerate, 'hertz (samples per second).')
     print()
-    print("samps is")
-    print(type(samps))
+#     print("samps is")
+#     print(type(samps))
     sound_data[0] = samps
     sound_data[1] = framerate
     return # nothing
