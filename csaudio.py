@@ -41,7 +41,7 @@ def tr(params, rf):
     sampwidth = params[1]
     nsamples  = params[3]
     if sampwidth == 1:
-        print("ding")
+#         print("ding")
 
         for i in range(nsamples):
             if samps[i] < 128:
@@ -50,17 +50,17 @@ def tr(params, rf):
                 samps[i] = (samps[i] - 256) * 256.0
 
     elif sampwidth == 2:
-        print("dong")
+#         print("dong")
         newsamps = nsamples * nchannels * [0]
         for i in range(nsamples * nchannels):
             # The wav package gives us the data in native
             # "endian-ness".  The clever indexing with wave.big_endian
             # makes sure we unpack in the proper byte order.
-            print("got this far")
-            print(type(samps))
+#             print("got this far")
+#             print(type(samps))
             sampval = samps[2*i + 1 - wave.big_endian] * 256 + samps[2*i + wave.big_endian]
-            print(type(sampval))
-            print("got this far")
+#             print(type(sampval))
+#             print("got this far")
             if sampval >= 32768:
                 print("prob")
                 sampval -= 65536
