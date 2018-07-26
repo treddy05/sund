@@ -40,6 +40,7 @@ def tr(params, rf):
     sampwidth = params[1]
     nsamples  = params[3]
     if sampwidth == 1:
+        print("ding")
 
         for i in range(nsamples):
             if samps[i] < 128:
@@ -48,6 +49,7 @@ def tr(params, rf):
                 samps[i] = (samps[i] - 256) * 256.0
 
     elif sampwidth == 2:
+        print("dong")
         newsamps = nsamples * nchannels * [0]
         for i in range(nsamples * nchannels):
             # The wav package gives us the data in native
@@ -62,6 +64,7 @@ def tr(params, rf):
         print('A sample width of', params[1], 'is not supported.')
         print('Returning silence.')
         samps = nsamples * [0.0]
+        print("poo")
 
     if nchannels == 2:
         # Mix to mono
