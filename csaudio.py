@@ -182,6 +182,7 @@ def read_wav(filename, sound_data):
         print("There was a problem with the file", filename)
         print("You might check if it's here and of")
         print("the correct format (.wav) ... ")
+        print("dinuhewfvyuewfguyowef")
         return # nothing
 
     numchannels = params[0]
