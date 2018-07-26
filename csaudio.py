@@ -189,6 +189,8 @@ def read_wav(filename, sound_data):
     print('   ', numsamples, 'audio samples, taken at')
     print('   ', framerate, 'hertz (samples per second).')
     print()
+    print("samps is")
+    print(type(samps))
     sound_data[0] = samps
     sound_data[1] = framerate
     return # nothing
