@@ -55,10 +55,15 @@ def tr(params, rf):
             # The wav package gives us the data in native
             # "endian-ness".  The clever indexing with wave.big_endian
             # makes sure we unpack in the proper byte order.
+            print("got this far")
             sampval = samps[2*i + 1 - wave.big_endian] * 256 + samps[2*i + wave.big_endian]
+            print("got this far")
             if sampval >= 32768:
+                print("prob")
                 sampval -= 65536
+                print("very prob")
             newsamps[i] = float(sampval)
+        print("got this far")
         samps = newsamps
     else:
         print('A sample width of', params[1], 'is not supported.')
