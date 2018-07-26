@@ -170,7 +170,10 @@ def read_wav(filename, sound_data):
     sound_data[1] = 42
     try:
         params, rf = get_data(filename)
+        print("worked")
         samps = tr(params, rf)
+        print("workedmore")
+              
     except:
         print("There was a problem with the file", filename)
         print("You might check if it's here and of")
