@@ -171,6 +171,7 @@ def read_wav(filename, sound_data):
     # now it has at least two elements, and we reset them
     sound_data[0] = 42
     sound_data[1] = 42
+    print("chod")
     try:
         params, rf = get_data(filename)
         print("worked")
