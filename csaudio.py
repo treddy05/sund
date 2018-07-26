@@ -62,9 +62,9 @@ def tr(params, rf):
 #             print(type(sampval))
 #             print("got this far")
             if sampval >= 32768:
-                print("prob")
+#                 print("prob")
                 sampval -= 65536
-                print("very prob")
+#                 print("very prob")
             newsamps[i] = float(sampval)
         print("got this far")
         samps = newsamps
